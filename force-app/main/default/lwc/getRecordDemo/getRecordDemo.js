@@ -8,18 +8,7 @@ export default class GetRecordDemo extends LightningElement {
     owner
     AnnualRevenue
     @api recordId
-    // @wire(getRecord, {recordId:'$recordId', fields:[NAME_FIELD, OWNER_NAME_FIELD, ANNUAL_REVENUE_FIELD]})
-    // accountHandler({data}){
-    //     if(data){
-    //         console.log(data)
-    //         this.name = getFieldValue(data, NAME_FIELD) 
-    //         this.AnnualRevenue = getFieldDisplayValue(data, ANNUAL_REVENUE_FIELD) 
-    //         this.owner = getFieldValue(data, OWNER_NAME_FIELD) 
-
-    //     }
-    // }
-
-    @wire(getRecord, {recordId:'$recordId', layoutTypes:['Full'], modes: ['Edit']})
+    @wire(getRecord, {recordId:'$recordId', fields:[NAME_FIELD, OWNER_NAME_FIELD, ANNUAL_REVENUE_FIELD]})
     accountHandler({data}){
         if(data){
             console.log(data)
@@ -29,4 +18,15 @@ export default class GetRecordDemo extends LightningElement {
 
         }
     }
+
+    // @wire(getRecord, {recordId:'$recordId', layoutTypes:['Full'], modes: ['View']})
+    // accountHandler({data}){
+    //     if(data){
+    //         console.log(data)
+    //         this.name = getFieldValue(data, NAME_FIELD) 
+    //         this.AnnualRevenue = getFieldDisplayValue(data, ANNUAL_REVENUE_FIELD) 
+    //         this.owner = getFieldValue(data, OWNER_NAME_FIELD) 
+
+    //     }
+    // }
 }
