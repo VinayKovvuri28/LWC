@@ -12,8 +12,12 @@ export default class GetRecordDemo extends LightningElement {
     accountHandler({data}){
         if(data){
             console.log(data)
+            // this.name = data.fields.Name.displayValue ? data.fields.Name.displayValue: data.fields.Name.value
             this.name = getFieldValue(data, NAME_FIELD) 
+            // this.AnnualRevenue = data.fields.AnnualRevenue.displayValue ? data.fields.AnnualRevenue.displayValue: data.fields.AnnualRevenue.value
+            this.AnnualRevenue = getFieldValue(data, ANNUAL_REVENUE_FIELD)
             this.AnnualRevenue = getFieldDisplayValue(data, ANNUAL_REVENUE_FIELD) 
+            // this.owner = data.fields.Owner.displayValue ? data.fields.Owner.displayValue:data.fields.Owner.value
             this.owner = getFieldValue(data, OWNER_NAME_FIELD) 
 
         }

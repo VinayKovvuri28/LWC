@@ -1,3 +1,10 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-19-2024
+  @last modified by  : Vinay Kovvuri
+-->
 <template>
     <lightning-card title="getNavItems Demo">
         <div class="slds-p-around_medium">
@@ -5,7 +12,9 @@
                <div>developerName - {result.developerName}</div>
                <div>objectApiName- {result.objectApiName}</div>
                <div>pageReference- {result.pageReference.type}</div>
+               <lightning-button label="Account List" value="" onclick={clickHandle}></lightning-button>
            </template>
+           
         </div>
     </lightning-card>
 </template>

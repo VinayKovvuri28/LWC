@@ -1,10 +1,18 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-19-2024
+  @last modified by  : Vinay Kovvuri
+-->
 <template>
     <lightning-card title="getRecordUi demo">
         <div class="slds-p-around_medium">
             <template for:each={formFields} for:item="field">
                 <div key={field.label}>
-                    <p><strong>{field.label}</strong></p>
-                    <p>{field.value}</p>
+                    <lightning-input label={field.label} value={field.value}></lightning-input>
+                    <!-- <p><strong>{field.label}</strong></p>
+                    <p>{field.value}</p> -->
                 </div>
             </template>
         </div>

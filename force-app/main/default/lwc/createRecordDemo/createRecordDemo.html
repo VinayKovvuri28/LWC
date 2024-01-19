@@ -1,3 +1,10 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-19-2024
+  @last modified by  : Vinay Kovvuri
+-->
 <template>
     <lightning-card title="create record form demo">
         <div class="slds-p-around_medium">
@@ -12,7 +19,12 @@
                  onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
                  <lightning-input type="email" label="Email" name="Email"
                  onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
-                 <lightning-button label="Create Contact" variant="brand" onclick={createContact}></lightning-button>
+                 <div class="slds-align_absolute-center">
+                    <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="cancel"></lightning-button>
+                    <lightning-button label="Create Contact" variant="brand" 
+                    class="slds-m-around_xx-small"
+                    onclick={createContact}></lightning-button>
+                 </div>
             </form>
         </div>
     </lightning-card>

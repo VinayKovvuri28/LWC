@@ -8,8 +8,12 @@ export default class GetNavItemsDemo extends LightningElement {
     })
     navItemsHandler({data}){
         if(data){
-            console.log(data)
+            console.log('GetNavItemsDemo: ',JSON.stringify(data))
             this.result = data.navItems[0]
         }
+    }
+
+    clickHandle(event){
+        window.location.href = this.result.content;
     }
 }

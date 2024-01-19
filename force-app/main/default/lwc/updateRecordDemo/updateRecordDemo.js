@@ -39,14 +39,15 @@ export default class UpdateRecordDemo extends LightningElement {
     }
 
     handleSave(event){
-        console.log(JSON.stringify(event.detail.draftValues))
+        console.log('draftValues: ',JSON.stringify(event.detail.draftValues))
         const recordInputs=event.detail.draftValues.map(draft=>{
             const fields = {...draft};
             return { fields:fields };
         })
+        console.log('recordInputs: ',JSON.stringify(recordInputs))
         const promises = recordInputs.map(recordInput=>updateRecord(recordInput))
         Promise.all(promises).then(()=>{
-            console.log('COntact updated Successfully')
+            console.log(`Contact updated Successfully`)
             this.draftValues=[]
         }).catch(error=>{
             console.error("Error updating the record", error)

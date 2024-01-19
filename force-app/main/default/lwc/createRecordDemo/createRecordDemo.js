@@ -7,7 +7,15 @@ export default class CreateRecordDemo extends LightningElement {
     changeHandler(event){
         const {name, value} = event.target
         this.formFields[name]=value
+
+        console.log('this.formFields', this.formFields)
     }
+
+    handleReset(){ 
+        this.template.querySelector('form.createForm').reset()
+        formFields={}
+    }
+
     createContact(){
         const recordInput = {apiName:CONTACT_OBJECT.objectApiName, fields:this.formFields}
         createRecord(recordInput).then(result=>{
