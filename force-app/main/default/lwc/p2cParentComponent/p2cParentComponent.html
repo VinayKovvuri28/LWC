@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-09-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Parent To Child Communication">
+      <lightning-card title="I Am Parent Component">
+        <h1>Hello from parent component</h1>
+        <lightning-input type="number" 
+                         label="Enter Progress Percentage" 
+                         onchange={handleOnchange}></lightning-input>
+        <div class="slds-m-around_x-small slds-box">
+            
+            <c-p2c-child-component progress={progressBar}  
+            tata-car-details = {tataCarModels}>
+            </c-p2c-child-component>
+
+            <lightning-button variant="brand-outline" label="Reset Child Slider" title="Reset Child Slider" onclick={handleResetChildSlider} class="slds-m-around_medium"></lightning-button>
+        </div>   
+        </lightning-card>
+    </lightning-card>
+</template>

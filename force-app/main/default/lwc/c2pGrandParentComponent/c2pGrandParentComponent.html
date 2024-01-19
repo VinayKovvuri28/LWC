@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-10-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Child To Parent To Grand-Parent Communication">
+            <h1>Hello from Grand-parent component</h1>
+            <div class="slds-box">
+              <div class="slds-align_absolute_center slds-text-heading_medium">
+                  Get Name From Grand Child : <b>{userName}</b>
+              </div>
+              <div class="slds-m-around_small slds-box slds-theme_shade slds-theme_alert-texture">
+                  <c-c2p-parent-component onmyevent = {getNameFromChild}></c-c2p-parent-component>
+              </div>
+          </div><hr>
+    </lightning-card>
+</template>

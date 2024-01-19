@@ -1,0 +1,78 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-06-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Conditional Rendering using if:true and if:false Directives">
+        <h3>Basic demo</h3>
+        <div class="slds-m-around_medium slds-box">
+            <lightning-button label={getLabel} onclick={showTextHandler}></lightning-button>
+            <template if:true={showText}>
+                Hello Friends
+            </template>
+            <template if:false={showText}>
+                ************
+            </template>
+        </div>
+        <h3>Getter demo</h3>
+        <div class="slds-m-around_medium slds-box">
+            <lightning-input type="text" 
+                             label="Country Name" 
+                             placeholder="Enter Country Name"
+                             onchange={changeHandler}>
+            </lightning-input>
+            <template if:true={isCountryIndia}>
+                yes you are in India
+            </template>
+            <template if:false={isCountryIndia}>
+                No you are not in India
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card title="New Conditional Rendering Directives spring'23">
+        <div class="slds-m-around_medium slds-box">
+            <p>
+                In Spring 23 Salesforce has announced the new improved Conditional Directives <b>lwc:if</b>, <b>lwc:elseif</b> and <b>lwc:else</b>.<br>
+                Old directives will not go away anywhere soon but in future they will be depreciated by the salesforce. <br>
+                <a href="https://help.salesforce.com/s/articleView?id=release-notes.rn_lwc_if_else.htm&type=5&release=242">https://help.salesforce.com/s/articleView?id=release-notes.rn_lwc_if_else.htm&type=5&release=242</a>
+            </p>
+        </div>
+        <div class="slds-m-around_medium slds-box">
+            <div title="lwc:if and else Basic demo" >
+                <lightning-button label={getLabel} 
+                                  onclick={showTextHandler}>
+                </lightning-button>
+                <template lwc:if={showText}>
+                    Hello Friends
+                </template>
+                <template lwc:else>
+                    ************
+                </template>
+            </div>
+        </div>
+        <div class="slds-m-around_medium slds-box">
+            <div title="lwc:if , lwc:elseif and lwc:else Getter demo" >
+                <lightning-input type="text" 
+                                 label="Country Name" 
+                                 placeholder="Enter Country Name" 
+                                 onchange={changeHandler}>
+                </lightning-input>
+                <template lwc:if={isCountryIndia}>
+                    yes you are in India
+                </template>
+                <template lwc:elseif={isCountryAustralia}>
+                    yes you are in Australia
+                </template>
+                <template lwc:elseif={isCountryCanada}>
+                    yes you are in Canada
+                </template>
+                <template lwc:else>
+                   Please Type India or Australia or Canada
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,65 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Create record using lightning-record-form">
+        <lightning-record-form
+        object-api-name={objectName}
+        fields={fieldsArray}
+        onsuccess={successHandler}
+        onerror={handleError}
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Display record using lightning-record-form">
+        <lightning-record-form
+        record-id={createdRecordId}
+        object-api-name={objectName}
+        fields={fieldsArray}
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Display record in readonly mode using lightning-record-form">
+        <lightning-record-form
+        record-id={createdRecordId}
+        object-api-name={objectName}
+        fields={fieldsArray}
+        mode="readonly"
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Edit record using lightning-record-form">
+        <lightning-record-form
+        record-id={createdRecordId}
+        object-api-name={objectName}
+        fields={fieldsArray}
+        mode="edit"
+        columns="2"
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Edit record with Compact layout using lightning-record-form">
+        <lightning-record-form
+        record-id={createdRecordId}
+        object-api-name={objectName}
+        mode="edit"
+        columns="2"
+        layout-type="Compact"
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Edit record with Full layout using lightning-record-form">
+        <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectApiName}
+        mode="edit"
+        columns="2"
+        layout-type="Full"
+        ></lightning-record-form>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-08-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Query Selector Demo">
+        <h1>Hey, I am heading</h1>
+        <div class="slds-m-around_x-small slds-box">
+            <strong class="child" lwc:dom="manual"></strong>
+            <template for:each={ceoList} for:item="ceo">
+                <div key={ceo.id} class="name">{ceo.company} ceo is {ceo.name}</div>
+            </template>
+        </div>
+
+        <div class="slds-m-around_x-small slds-box">
+            <lightning-input class="slds-m-bottom_x-small" type="text" value={value} readonly></lightning-input>
+            <lightning-button label="Fetch Details" onclick={fetchDetailsHandler}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-09-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="I Am Child Component">
+        <h1>Hello from child component</h1>
+        <lightning-card title="Pass primitive data from parent input-field to child progress-bar">
+          <lightning-progress-bar value={progress} size="large" variant="circular"></lightning-progress-bar>
+        </lightning-card><hr>
+        <lightning-card title="Pass non-primitive data to parent to child carousel">
+          <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Basic Carousel
+            <lightning-carousel disable-auto-scroll>
+              <template for:each={tataCarDetails} for:item="tataCar">
+                <lightning-carousel-image 
+                    key={tataCar.model}
+                    src = {tataCar.src}
+                    header = {tataCar.model}
+                    description = {tataCar.price} >
+                </lightning-carousel-image>
+              </template>      
+            </lightning-carousel>
+        </div>
+        </lightning-card><hr>
+        <lightning-card title="Calling child method from parent">
+          <lightning-slider label="Volume" size="large" value={val} onchange={handleOnchange}></lightning-slider>
+        </lightning-card>
+    </lightning-card>
+</template>

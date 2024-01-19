@@ -1,0 +1,75 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="lightning record edit form to creating new contact">
+        <lightning-record-edit-form 
+        object-api-name={objectName} 
+        onsuccess={successHandler}
+        onerror={handleError} >
+            <lightning-messages></lightning-messages>
+            <lightning-input-field field-name={fields.nameField}></lightning-input-field>
+            <lightning-input-field field-name={fields.titleField}></lightning-input-field>
+            <lightning-input-field field-name={fields.phoneField}></lightning-input-field>
+            <lightning-input-field field-name={fields.emailField}></lightning-input-field>
+            <lightning-input-field field-name={fields.accountField}></lightning-input-field>
+            <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="cancel"></lightning-button>
+            <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+    <lightning-card title="lightning record edit form To Edit Records">
+        <lightning-record-edit-form 
+        object-api-name={objectName}
+        record-id={createdRecordId}
+        onsuccess={successHandler}
+        onerror={handleError} >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.nameField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.titleField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.phoneField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.emailField}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.accountField}></lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="cancel"></lightning-button>
+                <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+    <lightning-card title="lightning record edit form with Custom Label">
+        <lightning-record-edit-form 
+        object-api-name={objectName}
+        record-id={createdRecordId}
+        onsuccess={successHandler}
+        onerror={handleError} >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.nameField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.titleField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.phoneField}></lightning-input-field>
+                    <label class="slds-p-left_x-small">Enter your email</label>
+                    <lightning-input-field variant="label-hidden" field-name={fields.emailField}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.accountField}></lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="cancel"></lightning-button>
+                <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

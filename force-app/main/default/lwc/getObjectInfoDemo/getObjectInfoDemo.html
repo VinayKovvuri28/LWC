@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="getObjectInfo Adapter">
+        <div class="slds-var-p-around_medium">
+            <template if:true={objectdetails}>
+                <div>Object API Name: {objectdetails.apiName}</div>
+                <div>defaultRecordTypeId: {objectdetails.defaultRecordTypeId}</div>   
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="getObjectInfos Adapter">
+        <div class="slds-var-p-around_medium">
+            <template if:true={objectInfos}>
+                <template for:each={objectInfos.results} for:item="obj">
+                    <div key={obj.result.apiName}>
+                        <div>Object Api Name - {obj.result.apiName}</div>
+                        <div>defaultRecordTypeId - {obj.result.defaultRecordTypeId}</div>
+                    </div>
+                </template>
+            </template>
+            
+        </div>
+    </lightning-card>
+
+    
+</template>

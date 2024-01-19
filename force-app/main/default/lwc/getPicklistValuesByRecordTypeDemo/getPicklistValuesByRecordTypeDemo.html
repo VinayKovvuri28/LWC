@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-18-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Account RecordType as PicklistValues">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={selectedRecordType}
+            placeholder="Select Record Type"
+            options={recordTypesOptions}
+            onchange={handleRecordType} ></lightning-combobox>
+        </div> 
+        <p>selected RecordType:{selectedRecordType}</p>
+    </lightning-card>
+
+    <lightning-card title="getPicklistValuesByRecordType Adapter">
+        <div class="slds-var-p-around_medium">
+            <template if:true={ratingOptions}>
+                <lightning-combobox
+                name="rating"
+                label="Rating"
+                value={selectedRating}
+                placeholder="Select Rating"
+                options={ratingOptions}
+                onchange={handleChange}></lightning-combobox>
+                <p>selectedRating: {selectedRating}</p>
+            </template>
+            
+            <template if:true={industryOptions}>
+                <lightning-combobox
+                name="industry"
+                label="Industry"
+                value={selectedIndustry}
+                placeholder="Select Industry"
+                options={industryOptions}
+                onchange={handleChange}></lightning-combobox>
+                <p>selectedIndustry: {selectedIndustry}</p>
+            </template>
+
+            <template if:true={citiesInAPOptions}>
+                <lightning-combobox
+                name="cities"
+                label="Cities"
+                value={selectedCitiesInAP}
+                placeholder="Select Industry"
+                options={citiesInAPOptions}
+                onchange={handleChange}></lightning-combobox>
+                <p>selectedCitiesInAP: {selectedCitiesInAP}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

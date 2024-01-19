@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="User detail using wire">
+        <div class="slds-var-p-around_medium">
+            {userId}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="User detail using wire as property">
+        <div class="slds-var-p-around_medium">
+            <template if:true={userDetailProperty.data}>  
+                <div>Name - {userDetailProperty.data.fields.Name.value}</div>
+                <div>Email - {userDetailProperty.data.fields.Email.value}</div>
+                <div>User Profile Id - {userDetailProperty.data.fields.ProfileId.value}</div>
+                <div>User Profile Name - {userDetailProperty.data.fields.Profile.value.fields.Name.value}</div>
+                <div>User Role Id - {userDetailProperty.data.fields.UserRoleId.value}</div>
+                <div>User Role Name - {userDetailProperty.data.fields.UserRole.value}</div>
+                <div>User Manager Name - {userDetailProperty.data.fields.Manager.value}</div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="User detail using wire as function">
+        <div class="slds-var-p-around_medium">
+            <template if:true={userDetail}>
+                <div>Email - {userDetail.Email.value}</div>
+                <div>Name - {userDetail.Name.value}</div>
+                <div>User ProfileId - {userDetail.ProfileId.value}</div>
+                <div>User Profile Name - {userDetail.Profile.value.fields.Name.value}</div>
+                <div>User Role Id - {userDetail.UserRoleId.value}</div>
+                <div>User Role Name - {userDetail.UserRole.value}</div>
+                <div>User Manager Name - {userDetail.Manager.value}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
