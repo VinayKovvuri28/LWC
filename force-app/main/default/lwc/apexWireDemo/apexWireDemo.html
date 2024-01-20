@@ -1,0 +1,106 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-20-2024
+  @last modified by  : Vinay Kovvuri
+-->
+<template>
+    <lightning-card title="ApexWireDemo">
+        <div class="slds-box slds-m-around_small">
+            <lightning-card title="Calling Apex Method Using Wire">
+                <div class="slds-m-around_xx-small">
+                    <lightning-card title="Wire as Property">
+                        <template lwc:if={wireGetAccountListUsingProperty.data}>
+                            <template for:each={wireGetAccountListUsingProperty.data} for:item="account">
+                                <div class="slds-box slds-box_xx-small" key={account.Id}>
+                                    <p><strong>Id       : </strong>{account.Id}</p>
+                                    <p><strong>Name     : </strong>{account.Name}</p>
+                                    <p><strong>Type     : </strong>{account.Type}</p>
+                                    <p><strong>Industry : </strong>{account.Id}</p>
+                                </div>
+                            </template>
+                        </template>
+                    </lightning-card>
+                </div>
+                <div class="slds-m-around_xx-small">
+                    <lightning-card title="Wire as Function">
+                        <template lwc:if={getAccountRecords}>
+                            <template for:each={getAccountRecords} for:item="account">
+                                <div class="slds-box slds-box_xx-small" key={account.Id}>
+                                    <p><strong>Id       : </strong>{account.Id}</p>
+                                    <p><strong>Name     : </strong>{account.Name}</p>
+                                    <p><strong>Type     : </strong>{account.newType}</p>
+                                    <p><strong>Industry : </strong>{account.Id}</p>
+                                </div>
+                            </template>
+                        </template>
+                    </lightning-card>
+                </div>
+                <div class="slds-m-around_xx-small">
+                    <lightning-card title="Wire as Function with params">
+                        <lightning-combobox 
+                                    name="accountType" 
+                                    label="Choose Account Type" 
+                                    value={selectedType}
+                                    placeholder="Select Type" 
+                                    options={accountTypeOptions} 
+                                    onchange={typeSelectionHandler} >
+                        </lightning-combobox>
+                        <div class="slds-var-p-around_medium">
+                            <template if:true={getFilteredAccounts}>
+                                <template for:each={getFilteredAccounts} for:item="account">
+                                    <div class="slds-box slds-box_xx-small" key={account.Id}>
+                                        <p><strong>Id       : </strong>{account.Id}</p>
+                                        <p><strong>Name     : </strong>{account.Name}</p>
+                                        <p><strong>Type     : </strong>{account.Type}</p>
+                                        <p><strong>Industry : </strong>{account.Id}</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+            </lightning-card>
+        </div>
+        
+        <div class="slds-box slds-m-around_small">
+            <lightning-card title="Calling Apex Method Using Imperatively">
+                <div class="slds-m-around_xx-small">
+                    <lightning-card title="Imperatively without params">
+                        <lightning-button label="Get Accounts" variant="brand" onclick={handleOnclick1}></lightning-button>
+                        <div class="slds-var-p-around_medium">
+                            <template if:true={getAccountsByImperatively}>
+                                <template for:each={getAccountsByImperatively} for:item="account">
+                                    <div class="slds-box slds-box_xx-small" key={account.Id}>
+                                        <p><strong>Id       : </strong>{account.Id}</p>
+                                        <p><strong>Name     : </strong>{account.Name}</p>
+                                        <p><strong>Type     : </strong>{account.Type}</p>
+                                        <p><strong>Industry : </strong>{account.Id}</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+                <div class="slds-m-around_xx-small">
+                    <lightning-card title="Imperatively with params">
+                        <lightning-input type="search" label="Search Account Name" value={accountName} onchange={searchHandler}></lightning-input>
+                        <div class="slds-var-p-around_medium">
+                            <template if:true={getAccountsByNameImperatively}>
+                                <template for:each={getAccountsByNameImperatively} for:item="account">
+                                    <div class="slds-box slds-box_xx-small" key={account.Id}>
+                                        <p><strong>Id       : </strong>{account.Id}</p>
+                                        <p><strong>Name     : </strong>{account.Name}</p>
+                                        <p><strong>Type     : </strong>{account.Type}</p>
+                                        <p><strong>Industry : </strong>{account.Id}</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+            </lightning-card>
+        </div>
+    </lightning-card>
+</template>
