@@ -42,6 +42,7 @@
     <tabs>Memory_Game_Project</tabs>
     <tabs>Navigations</tabs>
     <tabs>Work_With_Data_In_LWC</tabs>
+    <tabs>Book_Search_App_With_Rest_API_Callout</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LWC_UtilityBar</utilityBar>
 </CustomApplication>
