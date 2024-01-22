@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-22-2024
+  @last modified by  : Vinay Kovvuri
+-->
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-card title="Total Opportunities In Bar Chart">
+                <template if:true={pieChartLabels.length}>
+                    <c-charts type="bar" 
+                              chart-heading="Opportunities"
+                              chart-data={pieChartData} 
+                              chart-labels={pieChartLabels} >
+                    </c-charts>
+                </template> 
+            </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-card title="Total Opportunities In Doughnut Chart">
+                <template if:true={pieChartLabels.length}>
+                    <c-charts type="doughnut" 
+                              chart-heading="Opportunities"
+                              chart-data={pieChartData} 
+                              chart-labels={pieChartLabels} >
+                    </c-charts>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
