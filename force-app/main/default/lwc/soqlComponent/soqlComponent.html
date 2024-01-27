@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : Vinay Kovvuri
+  @group             : 
+  @last modified on  : 01-25-2024
+  @last modified by  : Vinay Kovvuri
+-->
+<template>
+    <lightning-card title="SOQL GENERATOR">
+        <div class="slds-p-horizontal_small">
+            <div class="slds-form">
+                <div class="slds-form-element slds-form-element_horizontal">
+                  <label class="slds-form-element__label"><h1><strong>FROM</strong></h1></label>
+                  <div class="slds-form-element__control">
+                    <!-- <input type="text" id="horizontal-input-id-01" placeholder="Search Object..." class="slds-input" /> -->
+                    <lightning-combobox name="progress"
+                                        label="Status" 
+                                        variant="label-hidden"
+                                        value={value}
+                                        placeholder="Search Object..."
+                                        options={allObjectsList}
+                                        onchange={handleChange} >
+                    </lightning-combobox>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

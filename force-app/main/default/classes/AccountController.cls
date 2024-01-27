@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Vinay Kovvuri
  * @group             : 
- * @last modified on  : 01-20-2024
+ * @last modified on  : 01-25-2024
  * @last modified by  : Vinay Kovvuri
 **/
 public with sharing class AccountController {
@@ -32,5 +32,11 @@ public with sharing class AccountController {
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Account> allAccountsWithContact(){
+        return [SELECT Id, Name, Phone, Website, 
+        (SELECT id, Name, Phone, Email FROM Contacts) FROM Account LIMIT 5];
     }
 }
